@@ -1,0 +1,22 @@
+<div class="gallery">
+	{{- with (.Get "dir") -}}
+		{{- $files := readDir (print "/static/img/" .) }}
+		{{- range $files -}}
+			{{- $thumbext := "-thumb" }}
+			{{- $isthumb := .Name | findRE ($thumbext | printf "%s\\.") }}
+			{{- $isimg := lower .Name | findRE "\\.(gif|jpg|jpeg|tiff|png|bmp)" }}
+			{{- if and $isimg (not $isthumb) }}
+				{{- $caption :=  .Name | replaceRE "\\..*" "" | humanize }}
+				{{- $linkURL := print "/img/" ($.Get "dir") "/" .Name | absURL }}
+				{{- $thumb := .Name | replaceRE "(\\.)" ($thumbext | printf "%s.") }}
+				{{- $thumbexists := where $files "Name" $thumb }}
+				{{- $thumbURL := print "/img/" ($.Get "dir") "/" $thumb | absURL }}
+  <div class="gallery-item">
+    <a href="{{ $linkURL }}" data-featherlight-gallery="#gallery">
+      <img class="thumbnail" src="{{ $thumbURL }}">
+    </a>
+  </div>
+{{- end }}
+{{- end }}
+{{- end }}
+</div>
