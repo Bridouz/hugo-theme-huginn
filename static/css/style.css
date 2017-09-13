@@ -1,0 +1,232 @@
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/nunito300.woff2") format("woff2")
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/nunito700.woff2") format("woff2")
+}
+@font-face {
+    font-family: "Source Code Pro";
+    src: url("../fonts/sourcecodepro.woff2") format("woff2")
+}
+html {
+    background: #F5F6F7;
+}
+body {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    font: 14px/1.7rem "Nunito Sans";
+    color: #222;
+}
+aside {
+    text-align: center;
+}
+#avatar {
+    margin: 0 auto;
+    display: block;
+    width: 140px;
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: inset;
+}
+#sitetitle {
+    font-size: 1.8em;
+    letter-spacing: -0.5px;
+    padding-top: 1rem;
+}
+#sitesubtitle {
+    font-size: 0.85em;
+    line-height: 1.5em;
+    margin: 12px 0;
+}
+#social {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+}
+#social i {
+  margin: 1rem;
+}
+.content {
+    background: #FAFBFC;
+    text-align: justify;
+    padding: 10px;
+}
+article {
+    padding: 1rem;
+}
+header {
+    border-bottom: thin solid #bfbfbf;
+    border-top: thin solid #bfbfbf;
+    padding-bottom: .75rem;
+    margin-bottom: 1rem;
+    padding: 0 .75rem .75rem .75rem;
+}
+header h1 a {
+    float: left;
+    margin-bottom: 0.4rem;
+}
+time {
+    float: right;
+    font-size: 0.8rem;
+}
+.meta {
+    clear: both;
+    color: #999;
+    font-size: .86rem;
+}
+.meta .categories {
+    text-transform: uppercase;
+    color: #F5A623;
+}
+.meta .tags {
+    color: #42b983;
+}
+footer {
+  margin: 4rem 0 1rem 0;
+  background: #E6E6E6;
+  text-align: center;
+  clear: both;
+}
+a,
+a.icon:hover,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+blockquote {
+    padding: 1px 15px;
+    border-left: 2px solid #8d7edc;
+}
+code {
+    font-size: .75rem;
+    font-family: "Source Code Pro", monospace;
+    background: #f5f5f5;
+    padding: .1em .3em;
+    border-radius: 3px;
+}
+a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    font-weight: bold;
+    outline: 0;
+}
+article a {
+    color: #8d7edc;
+}
+p a:hover {
+    color: #a79be4;
+    text-decoration: underline;
+}
+.label {
+    display: inline;
+    padding: .2em 1em .2em;
+    font-size: 80%;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: #5bc0de;
+}
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.4em;
+}
+h3 {
+    font-size: 1.2em;
+}
+#TableOfContents {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    background-color: #E6E6E6;
+}
+.icon-github {
+  color: #42b983;
+}
+.icon-rss {
+  color: #f60;
+}
+h1 i {
+	padding-right: 1rem;
+}
+nav {
+  text-align: center;
+}
+img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+}
+.thumbnail {
+  max-width: 30%;
+  padding: 1rem;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.gallery {
+  display: block;
+  padding-bottom: 1rem;
+}
+.gallery-item {
+  float: left;
+  position: relative;
+}
+.gallery-item .thumbnail {
+  max-width: 80%;
+}
+@media only screen and (min-width: 900px) {
+    aside {
+        float: left;
+        width: 160px;
+        position: fixed;
+        background: #E6E6E6;
+        border-radius: 2%;
+        border-width: 1px;
+        padding: 2rem 0.5rem;
+    }
+    .content {
+        float: right;
+        width: 640px;
+    }
+    .gallery-item {
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    aside {
+        position: relative;
+        margin: 0 auto;
+        padding: 5px 0 1rem 0;
+        vertical-align: middle;
+        border-bottom-style: dashed;
+        border-bottom-width: 1px;
+    }
+    #avatar {
+        float: left;
+        margin-left: 4rem;
+    }
+    .content {
+        padding-top: 3px;
+    }
+    .gallery-item {
+        width: 33.3%;
+    }
+}
