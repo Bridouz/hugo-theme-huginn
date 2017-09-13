@@ -2,20 +2,35 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Huginn"
-license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
+license = "GPL3"
+licenselink = "https://github.com/Bridouz/hugo-theme-huginn/blob/master/LICENSE.md"
+description = "A simple blog theme, inspired by [Pneumatic](https://github.com/iKevinY/pneumatic) (A Pelican theme)"
+homepage = "https://github.com/Bridouz/hugo-theme-huginn"
+tags = [
+  "responsive",
+  "simple",
+  "blog"
+]
+features = [
+  "Mobile-optimized",
+  "Pagination",
+  "Lightbox",
+  "Gallery',
+  "Code highlight",
+  "Hashover comments",
+  "Related Posts",
+  "Block Templates",
+  "Table of Contents",
+  "Custom Shortcodes"
+]
 min_version = "0.27"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Justin Bridouz"
+  homepage = "https://www.bloguslibrus.fr"
 
 # If porting an existing theme
 [original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Pneumatic"
+  homepage = "http://kevinyap.ca/"
+  repo = "https://github.com/iKevinY/pneumatic"
