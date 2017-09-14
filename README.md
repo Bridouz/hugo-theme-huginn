@@ -19,7 +19,7 @@ As of today **Huginn** supports :
 
 ## Shortcodes
 
-*I really want to thanks [liwenyip](https://www.liwen.id.au) for having created [hugo-easy-gallery](https://github.com/liwenyip/hugo-easy-gallery) which inspired me to create my shortcodes.
+*I really want to thanks [liwenyip](https://www.liwen.id.au) for having created [hugo-easy-gallery](https://github.com/liwenyip/hugo-easy-gallery) which inspired me to create my shortcodes.*
 
 ### lightbox
 The `lightbox` shortcode is pretty simple and looks like this :
@@ -33,10 +33,9 @@ The `lightbox` shortcode is pretty simple and looks like this :
 All you have to do is to make sure that your thumbnail has the same filename that the full one only with the addition of the suffix *-thumb* before the extension.
 The shortcode only needs two parameters :
 |  Parameters  |  Description
-|:------------:|----------------------------------------------------------------------------------------------|
-|  `img=""`    |  Path to your image. (ex: /img/folder/image.png)											  |
-|  `align=""`  |  If you want to align the image on the left side or the right side of the *content* block.   |
-|              |  If none is specified the image is automatically centered in the block.					  |
+|:------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  `img=""`    |  Path to your image. (ex: /img/folder/image.png)                                                                                                                 |
+|  `align=""`  |  If you want to align the image on the left side or the right side of the *content* block.If none is specified the image is automatically centered in the block. |
 
 *Don't forget to add a `lightbox = True` in your post frontmatter to load Featherlight ressources.*
 
