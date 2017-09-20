@@ -179,7 +179,6 @@ img {
   max-width: 90%;
 }
 .thumbnail {
-  max-width: 30%;
   padding: 1rem;
 }
 .left {
@@ -189,7 +188,7 @@ img {
   float: right;
 }
 .gallery {
-  display: block;
+  display: inline-block;
   padding-bottom: 1rem;
 }
 .gallery-item {
@@ -216,6 +215,9 @@ img {
     .gallery-item {
         width: 20%;
     }
+    .thumbnail {
+        max-width: 30%;
+    }
 }
 @media only screen and (max-width: 767px) {
     aside {
@@ -235,5 +237,8 @@ img {
     }
     .gallery-item {
         width: 33.3%;
+    }
+    .thumbnail {
+        max-width: 80%;
     }
 }
