@@ -114,6 +114,13 @@ code {
     padding: .1em .3em;
     border-radius: 3px;
 }
+pre {
+    padding: 1rem 2rem;
+    border-left: 5px #8d7edc solid;
+    background: #f6f6f6;
+    display: block;
+    white-space: pre-wrap;
+}
 a {
     color: #333;
     font-weight: bold;
