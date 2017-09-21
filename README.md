@@ -11,7 +11,7 @@ As of today **Huginn** supports :
     - Table of Content (automatically added if your post contains *headers*)
     - Related Content
     - Rss feeds (tweaked layout to allow full-text rendering)
-  - Code Highlighting powered by Prism.js (activated in frontmatter with `highlight = True`)
+  - Code Highlighting powered by Pygments (might need to install python's pygments package on your computer)
   - Javascript lightbox powered by Featherlight
     - A `lightbox` shortcode for simple one-image display (activated in frontmatter with `lightbox = True`)
     - A `gallery` shortcode to display all images in a directory(activated in frontmatter with `gallery = True`)
