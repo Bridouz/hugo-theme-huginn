@@ -1,7 +1,4 @@
 {{ define "css" }}
-  {{ if isset .Params "highlight" }}
-    <link rel="stylesheet" href="/css/prism.min.css" />
-  {{ end }}
   {{ if isset .Params "lightbox" }}
     <link rel="stylesheet" href="/css/featherlight.min.css" />
   {{ end }}
@@ -65,8 +62,5 @@
   {{ if isset .Params "gallery" }}
     <script src="{{ "js/featherlight.min.js" | relURL}}"></script>
     <script src="{{ "js/featherlight.gallery.min.js" | relURL}}"></script>
-  {{ end }}
-  {{if isset .Params "highlight" }}
-    <script src="{{ "js/prism.min.js" | relURL}}"></script>
   {{ end }}
 {{ end }}

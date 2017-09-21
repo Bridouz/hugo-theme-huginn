@@ -110,14 +110,14 @@ blockquote {
 code {
     font-size: .75rem;
     font-family: "Source Code Pro", monospace;
-    background: #f1f1f1;
-    padding: .1em .3em;
+    background: #f0f0f0;
     border-radius: 3px;
 }
 pre {
     padding: 1rem 2rem;
-    border-left: 5px #8d7edc solid;
-    background: #f1f1f1;
+    border: 1px #8d7edc solid;
+    border-radius: 3px;
+    background: #f0f0f0;
     display: block;
     white-space: pre-wrap;
 }
