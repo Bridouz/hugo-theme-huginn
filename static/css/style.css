@@ -198,6 +198,17 @@ img {
 .gallery-item .thumbnail {
   max-width: 80%;
 }
+.nowlistening {
+    padding: 1rem 2rem;
+    border: 1px #8d7edc solid;
+    border-radius: 3px;
+    background: #f0f0f0;
+    text-align: center;
+}
+.nowlistening:before {
+    content: "Ce billet fut écrit en écoutant :";
+
+}
 @media only screen and (min-width: 900px) {
     aside {
         float: left;

@@ -31,7 +31,7 @@
     - <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
       #{{ . }}
     </a>
-  {{ end }}
+  {{ end }} 
   </div>
   </header>
   {{ if .TableOfContents }}
@@ -39,6 +39,11 @@
     <summary>Table des Matières</summary>
     {{ .TableOfContents }}
   </details>
+  {{ end }}
+  {{ with .Params.song }}
+  <div class="nowlistening">
+  {{ . | markdownify }}
+  </div>
   {{ end }}
   {{ .Content }}
 <article>

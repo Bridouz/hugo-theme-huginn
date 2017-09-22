@@ -15,6 +15,7 @@ As of today **Huginn** supports :
   - Javascript lightbox powered by Featherlight
     - A `lightbox` shortcode for simple one-image display (activated in frontmatter with `lightbox = True`)
     - A `gallery` shortcode to display all images in a directory(activated in frontmatter with `gallery = True`)
+  - Displaying a link and the name of a song you were listening at while writing a post (activated in frontmatter with `song: [title](link)`)
     
 
 ## Shortcodes
