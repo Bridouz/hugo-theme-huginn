@@ -173,7 +173,7 @@ h3 {
 h1 i {
 	padding-right: 1rem;
 }
-nav {
+#index {
   text-align: center;
 }
 img {
@@ -225,6 +225,9 @@ img {
     .content {
         float: right;
         width: 640px;
+    }
+    #TableOfContents {
+        max-width: 50%;
     }
     .gallery-item {
         width: 20%;
