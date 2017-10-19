@@ -4,7 +4,7 @@
 name = "Huginn"
 license = "GPL3"
 licenselink = "https://github.com/Bridouz/hugo-theme-huginn/blob/master/LICENSE.md"
-description = "A simple blog theme, inspired by [Pneumatic](https://github.com/iKevinY/pneumatic) (A Pelican theme)"
+description = "A simple blog theme for Hugo, inspired by [Pneumatic](https://github.com/iKevinY/pneumatic) (A Pelican theme)"
 homepage = "https://github.com/Bridouz/hugo-theme-huginn"
 tags = [
   "responsive",
