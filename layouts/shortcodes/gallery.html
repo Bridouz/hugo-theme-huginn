@@ -1,4 +1,4 @@
-<div class="gallery">
+<div class="gallery" data-featherlight-gallery data-featherlight-filter="a">
 	{{- with (.Get "dir") -}}
 		{{- $files := readDir (print "/static/img/" .) }}
 		{{- range $files -}}
@@ -12,7 +12,7 @@
 				{{- $thumbexists := where $files "Name" $thumb }}
 				{{- $thumbURL := print "/img/" ($.Get "dir") "/" $thumb | absURL }}
   <div class="gallery-item">
-    <a href="{{ $linkURL }}" data-featherlight-gallery="#gallery">
+    <a href="{{ $linkURL }}" >
       <img class="thumbnail" src="{{ $thumbURL }}">
     </a>
   </div>
