@@ -1,10 +1,9 @@
 {{ define "css" }}
   {{ if isset .Params "lightbox" }}
-    <link rel="stylesheet" href="/css/featherlight.min.css" />
+    <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{ end }}
   {{ if isset .Params "gallery" }}
-    <link rel="stylesheet" href="/css/featherlight.min.css" />
-    <link rel="stylesheet" href="/css/featherlight.gallery.min.css" />
+    <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{ end }}
 {{ end }}
 {{ define "title" }}
@@ -62,10 +61,17 @@
 {{ define "scripts" }}
   <script src="{{ "js/jquery.min.js" | relURL}}"></script>
   {{ if isset .Params "lightbox" }}
-    <script src="{{ "js/featherlight.min.js" | relURL}}"></script>
+    <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
+    <script>baguetteBox.run('a', {
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+}});</script>
   {{ end }}
   {{ if isset .Params "gallery" }}
-    <script src="{{ "js/featherlight.min.js" | relURL}}"></script>
-    <script src="{{ "js/featherlight.gallery.min.js" | relURL}}"></script>
+    <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
+    <script>baguetteBox.run('.gallery', {
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+}});</script>
   {{ end }}
 {{ end }}
