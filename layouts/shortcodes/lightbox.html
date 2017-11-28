@@ -1,4 +1,4 @@
 {{- $thumb := .Get "src" | default (printf "%s." ("-thumb") | replace (.Get "img") ".") }}
-<a href={{ .Get "img" }} data-featherlight="{{ .Get "img" }}">
+<a href={{ .Get "img" }}>
   <img class="thumbnail {{ .Get "align" }}" src="{{ $thumb }}">
 </a>

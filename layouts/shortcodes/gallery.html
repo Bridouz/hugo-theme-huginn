@@ -1,4 +1,4 @@
-<div class="gallery" data-featherlight-gallery data-featherlight-filter="a">
+<div class="gallery">
 	{{- with (.Get "dir") -}}
 		{{- $files := readDir (print "/static/img/" .) }}
 		{{- range $files -}}
