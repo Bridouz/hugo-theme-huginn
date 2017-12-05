@@ -42,7 +42,7 @@
         <a href="{{ .Site.RSSLink }}"><i class="icon-rss"></i></a>
       </div>
     </aside>
-    <div class="content">
+    <main>
     {{ block "main" . }}
     {{ end }}
     <footer>
@@ -52,6 +52,6 @@
       {{ . | markdownify }}
     {{ end }}
     </footer>
-    </div>
+    </main>
   </body>
 
