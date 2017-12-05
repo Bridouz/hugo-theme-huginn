@@ -15,7 +15,7 @@
     src: url("../fonts/sourcecodepro.woff2") format("woff2")
 }
 html {
-    background: #F5F6F7;
+    background: #2F363F;
 }
 body {
     position: relative;
@@ -23,10 +23,10 @@ body {
     margin: 0 auto;
     padding-top: 1rem;
     font: 14px/1.7rem "Nunito Sans";
-    color: #222;
+    color: #dcdcdc;
 }
 aside {
-    text-align: center;
+    background: #22272E;
 }
 #avatar {
     margin: 0 auto;
@@ -53,13 +53,13 @@ aside {
 #social i {
   margin: 1rem;
 }
-.content {
-    background: #FAFBFC;
+main {
+    background: #363e49;
     text-align: justify;
     padding: 10px;
 }
 article {
-    padding: 1rem;
+    padding: 1rem 1rem 3rem 1rem;
 }
 header {
     border-bottom: thin solid #bfbfbf;
@@ -78,8 +78,8 @@ time {
 }
 .meta {
     clear: both;
-    color: #999;
     font-size: .86rem;
+    margin-bottom: 0.8rem;
 }
 .meta .categories {
     text-transform: uppercase;
@@ -87,23 +87,22 @@ time {
 }
 .meta .tags {
     color: #42b983;
+    margin-left: 0.6rem;
 }
 footer {
   margin: 4rem 0 1rem 0;
-  background: #E6E6E6;
+  background: #2D3236;
   text-align: center;
   clear: both;
 }
-a,
-a.icon:hover,
-a:link,
-a:visited {
-    text-decoration: none;
+a {
+  color: #5b9dd9;
 }
 a:hover {
     text-decoration: underline;
 }
 p {
+    text-indent: 1.5rem;
     padding-bottom: .8rem;
 }
 blockquote {
@@ -116,41 +115,24 @@ blockquote {
 code {
     font-size: .75rem;
     font-family: "Source Code Pro", monospace;
-    background: #f0f0f0;
-    border-radius: 3px;
+    padding: 0.125rem;
+    color: #e6e6e6;
+    background-color: #22272e;
+    border-radius: 2px;
 }
 pre {
     padding: 1rem 2rem;
-    border: 1px #8d7edc solid;
-    border-radius: 3px;
-    background: #f0f0f0;
+    border: 1px #5b9dd9 solid;
+    border-radius: 2px;
+    background: #22272E;
     display: block;
     white-space: pre-wrap;
 }
 a {
-    color: #333;
     font-weight: bold;
     text-decoration: none;
     font-weight: bold;
     outline: 0;
-}
-article a {
-    color: #8d7edc;
-}
-p a:hover {
-    color: #a79be4;
-    text-decoration: underline;
-}
-.label {
-    display: inline;
-    padding: .2em 1em .2em;
-    font-size: 80%;
-    color: #ffffff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
-    background-color: #5bc0de;
 }
 h1 {
     font-size: 1.8em;
@@ -160,18 +142,6 @@ h2 {
 }
 h3 {
     font-size: 1.2em;
-}
-#TableOfContents {
-    border-radius: 0.25rem;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    background-color: #E6E6E6;
-}
-.icon-github {
-  color: #42b983;
-}
-.icon-rss {
-  color: #f60;
 }
 h1 i {
 	padding-right: 1rem;
@@ -184,81 +154,53 @@ img {
   margin: auto;
   max-width: 90%;
 }
-.thumbnail {
-  padding: 1rem;
+.icon-github {
+  color: #42b983;
 }
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
-.gallery {
-  display: inline-block;
-  padding-bottom: 1rem;
-}
-.gallery-item {
-  float: left;
-  position: relative;
-}
-.gallery-item .thumbnail {
-  max-width: 80%;
-}
-.nowlistening {
-    padding: 1rem 2rem;
-    border: 1px #8d7edc solid;
-    border-radius: 3px;
-    background: #f0f0f0;
-    text-align: center;
-}
-.nowlistening:before {
-    content: "Ce billet fut écrit en écoutant :";
-
+.icon-rss {
+  color: #f60;
 }
 @media only screen and (min-width: 900px) {
     aside {
         float: left;
         width: 160px;
         position: fixed;
-        background: #E6E6E6;
         border-radius: 2%;
         border-width: 1px;
         padding: 2rem 0.5rem;
+        text-align: center;
     }
-    .content {
+    main {
         float: right;
         width: 640px;
     }
-    #TableOfContents {
-        max-width: 50%;
-    }
-    .gallery-item {
-        width: 20%;
-    }
-    .thumbnail {
-        max-width: 30%;
-    }
 }
 @media only screen and (max-width: 767px) {
+    body {
+        padding-top: 0px;
+    }
     aside {
         position: relative;
-        margin: 0 auto;
-        padding: 5px 0 1rem 0;
+        padding: 0.2rem 0 0.2rem 0.2rem;
         vertical-align: middle;
-        border-bottom-style: dashed;
-        border-bottom-width: 1px;
+        text-align: left
     }
     #avatar {
-        float: left;
-        margin-left: 4rem;
+        display: none;
     }
-    .content {
-        padding-top: 3px;
+    #sitetitle {
+        font-size: 1rem;
+        padding-top: 0.2rem;
     }
-    .gallery-item {
-        width: 33.3%;
+    #sitesubtitle {
+        margin: 0px;
     }
-    .thumbnail {
-        max-width: 80%;
+    #social {
+    font-size: 1rem;
+    padding: 0.2rem;
+    }
+    main {
+        clean: both;
+        padding-top: 1rem;;
     }
 }
