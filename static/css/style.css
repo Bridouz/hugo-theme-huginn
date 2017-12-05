@@ -180,18 +180,28 @@ img {
 .gallery-item .thumbnail {
   max-width: 80%;
 }
-
+.label {
+    display: inline;
+    padding: .2em 1em .2em;
+    font-size: 80%;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: #5b9dd9;
+}
 @media only screen and (min-width: 900px) {
     aside {
         float: left;
         width: 160px;
         position: fixed;
-        background: #E6E6E6;
         border-radius: 2%;
         border-width: 1px;
         padding: 2rem 0.5rem;
+        text-align: center;
     }
-    .content {
+    main {
         float: right;
         width: 640px;
     }
