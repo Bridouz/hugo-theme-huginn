@@ -180,19 +180,29 @@ img {
 .gallery-item .thumbnail {
   max-width: 80%;
 }
+
 @media only screen and (min-width: 900px) {
     aside {
         float: left;
         width: 160px;
         position: fixed;
+        background: #E6E6E6;
         border-radius: 2%;
         border-width: 1px;
         padding: 2rem 0.5rem;
-        text-align: center;
     }
-    main {
+    .content {
         float: right;
         width: 640px;
+    }
+    #TableOfContents {
+        max-width: 50%;
+    }
+    .gallery-item {
+        width: 20%;
+    }
+    .thumbnail {
+        max-width: 30%;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -223,4 +233,10 @@ img {
         clean: both;
         padding-top: 1rem;;
     }
+    .gallery-item {
+        width: 33.3%;
+    }
+    .thumbnail {
+        max-width: 80%;
+}
 }
