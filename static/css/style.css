@@ -160,6 +160,26 @@ img {
 .icon-rss {
   color: #f60;
 }
+.thumbnail {
+  padding: 1rem;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.gallery {
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+.gallery-item {
+  float: left;
+  position: relative;
+}
+.gallery-item .thumbnail {
+  max-width: 80%;
+}
 @media only screen and (min-width: 900px) {
     aside {
         float: left;
