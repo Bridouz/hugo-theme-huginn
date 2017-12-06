@@ -12,7 +12,7 @@ As of today **Huginn** supports :
     - Related Content
     - Rss feeds (tweaked layout to allow full-text rendering)
   - Code Highlighting powered by Pygments (might need to install python's pygments package on your computer)
-  - Javascript lightbox powered by Featherlight
+  - Javascript lightbox powered by [baguetteBox.js](https://github.com/feimosi/baguetteBox.js)
     - A `lightbox` shortcode for simple one-image display (activated in frontmatter with `lightbox = True`)
     - A `gallery` shortcode to display all images in a directory(activated in frontmatter with `gallery = True`)
   - Displaying a link and the name of a song you were listening at while writing a post (activated in frontmatter with `song: [title](link)`)
@@ -26,7 +26,7 @@ As of today **Huginn** supports :
 The `lightbox` shortcode is pretty simple and looks like this :
 ```
 {{- $thumb := .Get "src" | default (printf "%s." ("-thumb") | replace (.Get "img") ".") }}
-<a href={{ .Get "img" }} data-featherlight="{{ .Get "img" }}">
+<a href={{ .Get "img" }}>
   <img class="thumbnail {{ .Get "align" }}" src="{{ $thumb }}">
 </a>
 ```
@@ -59,7 +59,7 @@ The `gallery` shortcode is even more simplier than the previous one. All you hav
 				{{- $thumbexists := where $files "Name" $thumb }}
 				{{- $thumbURL := print "/img/" ($.Get "dir") "/" $thumb | absURL }}
   <div class="gallery-item">
-    <a href="{{ $linkURL }}" data-featherlight-gallery="#gallery">
+    <a href="{{ $linkURL }}" >
       <img class="thumbnail" src="{{ $thumbURL }}">
     </a>
   </div>
