@@ -1,10 +1,13 @@
 {{- define "css" -}}
   {{ if isset .Params "lightbox" }}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
-  {{ end }}
+  {{- end -}}
   {{ if isset .Params "gallery" }}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
-  {{ end }}
+  {{- end -}}
+  {{ if isset .Params "highlight" }}
+    <link rel="stylesheet" href="/css/pygments.css" />
+  {{- end -}}
 {{- end -}}
 {{- define "title" -}}
   {{ .Title }} – {{ .Site.Title }}
