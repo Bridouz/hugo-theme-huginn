@@ -1,77 +1,74 @@
-{{ define "css" }}
+{{- define "css" -}}
   {{ if isset .Params "lightbox" }}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{ end }}
   {{ if isset .Params "gallery" }}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{ end }}
-{{ end }}
-{{ define "title" }}
+{{- end -}}
+{{- define "title" -}}
   {{ .Title }} – {{ .Site.Title }}
-{{ end }}
+{{- end -}}
 {{ define "main" }}
-<article>
-  <header>
-  <h1>
-    <a href="{{ .Permalink }}">
-      {{ .Title }}
-    </a>
-  <time datetime="{{ .Date.Format "2006-01-02T15:04:05+01:00" }}">
-    {{ .Date.Format "02/01/2006" }}
-  </time>
-  </h1>
-  <div class="meta">
-  {{ range .Params.categories }}
-    <a class="categories" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
-      {{ . }}
-    </a>
-  {{ end }}
-  {{ range .Params.tags }}
-    - <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-      #{{ . }}
-    </a>
-  {{ end }} 
-  </div>
-  </header>
-  {{ if .TableOfContents }}
-  <details>
-    <summary>Table des Matières</summary>
-    {{ .TableOfContents }}
-  </details>
-  {{ end }}
-  {{ with .Params.song }}
-  <div class="nowlistening">
-  {{ . | markdownify }}
-  </div>
-  {{ end }}
-  {{ .Content }}
-</article>
-  {{ $related := .Site.RegularPages.Related . | first 5 }}
-{{ with $related }}
-<h3>Billets en liens :</h3>
-<ul>
-	{{ range . }}
-	<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-	{{ end }}
-</ul>
-{{ end }}
-  <script type="text/javascript" src="/hashover/hashover.js"></script>
-  <noscript>Merci d'activer JavaScript pour voir les commentaires avec HashOver.</noscript>
-{{ end }}
-{{ define "scripts" }}
-  <script src="{{ "js/jquery.min.js" | relURL}}"></script>
-  {{ if isset .Params "lightbox" }}
-    <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
-    <script>baguetteBox.run('a', {
+      <article>
+        <header>
+          <h1>
+            <a href="{{ .Permalink }}">
+              {{- .Title -}}
+            </a>
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05+01:00" }}">
+              {{- .Date.Format "02/01/2006" -}}
+            </time>
+          </h1>
+          <div class="meta">
+          {{ range .Params.categories }}
+		        <a class="categories" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
+		          {{- . -}}
+		        </a>
+		        {{- end -}}
+		        {{ range .Params.tags }}
+		        <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+		          {{- . -}}
+		        </a>
+          {{- end -}}
+          </div>
+        </header>
+        {{ if .TableOfContents }}
+        <details>
+          <summary>Table des Matières</summary>
+          {{- .TableOfContents -}}
+        </details>
+        {{- end -}}
+        {{- with .Params.song -}}
+        <div class="nowlistening">
+          {{- . | markdownify -}}
+        </div>
+        {{- end -}}
+        {{- .Content -}}
+      </article>
+      {{ $related := .Site.RegularPages.Related . | first 5 }}
+      {{ with $related }}
+      <h3>Billets en liens :</h3>
+        <ul>
+        {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+        </ul>
+      {{ end }}
+      {{ end }}
+      {{- define "scripts" -}}
+      {{- if isset .Params "lightbox" -}}
+      <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
+      <script>baguetteBox.run('a', {
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
 }});</script>
-  {{ end }}
-  {{ if isset .Params "gallery" }}
-    <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
-    <script>baguetteBox.run('.gallery', {
+      {{- end -}}
+      {{- if isset .Params "gallery" -}}
+      <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
+      <script>baguetteBox.run('.gallery', {
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
 }});</script>
-  {{ end }}
+      {{- end -}}
 {{ end }}

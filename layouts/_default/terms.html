@@ -1,14 +1,13 @@
 {{ define "main" }}
 <header>
   <h1>
-    {{ .Title }}
+    {{- .Title -}}
   </h1>
 </header>
 <div class="taxonomy">
     {{ $data := .Data }}
-    {{ range $key, $value := .Data.Terms }}
+    {{- range $key, $value := .Data.Terms -}}
         <a class="label label-info" href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }} ({{ len $value }})</a>
     {{ end }}
 </div>
-
 {{ end }}

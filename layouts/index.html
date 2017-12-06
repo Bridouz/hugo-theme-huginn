@@ -1,31 +1,31 @@
 {{ define "main" }}
-{{ range (.Paginator 5).Pages }}
+{{- range (.Paginator 5).Pages -}}
 <article>
   <header>
     <h1>
       <a href="{{ .Permalink }}">
-        {{ .Title }}
+        {{- .Title -}}
       </a>
       <time datetime="{{ .Date.Format "1914-12-20" }}">
-      {{ .Date.Format "02/01/2006" }}
+      {{- .Date.Format "02/01/2006" -}}
     </time>
     </h1>
     <div class="meta">
-      {{ range .Params.categories }}
+      {{- range .Params.categories -}}
         <a class="categories" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
-          {{ . }}
+          {{- . -}}
         </a>
-      {{ end }}
-      {{ range .Params.tags }}
-        - <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-          #{{ . }}
+      {{- end -}}
+      {{- range .Params.tags -}}
+        <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+          {{- . -}}
         </a>
-      {{ end }}
+      {{- end -}}
       </div>
   </header>
   {{ .Summary }}
 </article>
-{{ end }}
+{{- end -}}
 <nav id="index">
   <a href="{{ .Site.BaseURL }}post/">Voir le reste des billets</a>
 </nav>

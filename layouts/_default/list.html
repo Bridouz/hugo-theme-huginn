@@ -1,39 +1,39 @@
 {{ define "main" }}
 <header>
   <h1>
-      <a href="{{ .Page.RSSLink }}"><i class="icon-rss"></i></a>{{ .Title }}
+    <a href="{{ .Page.RSSLink }}"><i class="icon-rss"></i></a>{{ .Title }}
   </h1>
 </header>
   <ul>
-  {{ range .Paginator.Pages }}
+  {{- range .Paginator.Pages -}}
     <li>
       <a href="{{ .Permalink }}">
-        {{ .Date.Format "02/01/2006" }} - {{ .Title }}
+        {{- .Date.Format "02/01/2006" -}} - {{- .Title -}}
       </a>
         <div class="meta">
-      {{ range .Params.categories }}
+      {{- range .Params.categories -}}
         <a class="categories" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
-          {{ . }}
+          {{- . -}}
         </a>
-      {{ end }}
-      {{ range .Params.tags }}
-        - <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-          #{{ . }}
+      {{- end -}}
+      {{- range .Params.tags -}}
+        <a class="tags" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+          {{- . -}}
         </a>
-      {{ end }}
+      {{- end -}}
       </div>
     </li>
-  {{ end }}
+  {{- end -}}
   </ul>
 <nav>
   <p>
-    {{if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}">&laquo; Previous</a> |
-    {{ end }}
+    {{- if .Paginator.HasPrev -}}
+      <a href="{{ .Paginator.Prev.URL }}">&laquo; Previous</a>
+    {{- end -}}
     <span>Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
-    {{ if .Paginator.HasNext }}
-      | <a href="{{ .Paginator.Next.URL }}">Next &raquo;</a>
-    {{ end }}
+    {{- if .Paginator.HasNext -}}
+      <a href="{{ .Paginator.Next.URL }}">Next &raquo;</a>
+    {{- end -}}
   </p>
 </nav>
 {{ end }}
