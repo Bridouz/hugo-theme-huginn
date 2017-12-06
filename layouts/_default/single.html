@@ -56,6 +56,10 @@
         {{ end }}
         </ul>
       {{ end }}
+      {{ if .Site.Params.static_comments }}
+      {{ partial "form" . }}
+      {{ partial "comments" . }}
+      {{ end }}
       {{ end }}
       {{- define "scripts" -}}
       {{- if isset .Params "lightbox" -}}

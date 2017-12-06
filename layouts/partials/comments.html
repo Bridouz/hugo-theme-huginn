@@ -1,0 +1,27 @@
+{{ with (index .Site.Data.comments (substr $.File.LogicalName 0 -3)) }}
+<h3>Commentaires </h3>
+<div class="comments">
+{{ range .comments }}
+{{ if .id }}
+  <div class="comment">
+    <span><strong>{{ .id }}</strong></span></br>
+      <div class="comment-name">{{ .name }}{{if .website}} - <a href="{{ .website | safeURL }}">{{ .website }}{{ end }}</a></div>
+    <div class="comment-date">{{ .date }}</div>
+    <div class="comment-body">{{ .body | markdownify }}</div>
+    {{if .reply}}
+    {{range .reply}}
+    <div class="reply">
+    <span><strong>{{ .replyid }}</strong></span></br>
+    <div class="reply-name">{{ .replyname }}{{if .replywebsite}} - <a href="{{ .replywebsite | safeURL }}">{{ .replywebsite }}{{ end }}</a></div>
+    <div class="reply-date">{{ .replydate }}</div>
+    <div class="reply-body">{{ .replybody | markdownify }}</div>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
+{{ end }}
+</div>
+{{ else }}
+<h3>Pas de commentaires pour le moment</h3>
+{{ end }}

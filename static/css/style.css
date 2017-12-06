@@ -194,6 +194,34 @@ img {
     border-radius: .25em;
     background-color: #5b9dd9;
 }
+.comments {
+    padding: .4rem;
+}
+.comment {
+    background-color: #4c5767;
+    padding: .4rem;
+    border-radius: 4px;
+    margin-top: .4rem;
+}
+.reply {
+    background-color: #414b58;
+    padding: 0.4rem;
+    border-radius: 4px;
+    margin-top: .4rem;
+    margin-left: 1rem;
+}
+.comments span {
+    float: left;
+}
+.comment-name, .reply-name {
+    float: left;
+}
+.comment-date, .reply-date {
+    float: right;
+}
+.comment-body, .reply-body {
+    clear: both;
+}
 @media only screen and (min-width: 900px) {
     aside {
         float: left;
