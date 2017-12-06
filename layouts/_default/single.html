@@ -4,10 +4,8 @@
   {{- end -}}
   {{ if isset .Params "gallery" }}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
-  {{- end -}}
-  {{ if isset .Params "highlight" }}
+  {{- end }}
     <link rel="stylesheet" href="/css/pygments.min.css" />
-  {{- end -}}
 {{- end -}}
 {{- define "title" -}}
   {{ .Title }} – {{ .Site.Title }}
