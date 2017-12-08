@@ -215,12 +215,16 @@ img {
 }
 .comment-name, .reply-name {
     float: left;
+    font-weight: bold;
 }
 .comment-date, .reply-date {
     float: right;
 }
 .comment-body, .reply-body {
     clear: both;
+    margin-top: 2.6rem;
+    padding-top: .4rem;
+    border-top: 1px solid #dcdcdc;
 }
 @media only screen and (min-width: 900px) {
     aside {

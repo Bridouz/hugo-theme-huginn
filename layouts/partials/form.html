@@ -1,4 +1,5 @@
-<h3 class="comment-title">Poster un commentaire</h3>
+<details>
+<summary><strong>Poster un commentaire</strong></summary>
 <form method="POST" action="/comments/submit.php">
     <input type="hidden" name="post_id" value="{{ .URL }}" />
     <input type="hidden" name="return_url" value="{{ .URL }}" />
@@ -10,3 +11,5 @@
     <br /><textarea name="comment" rows="10" cols="50" required></textarea></p>
     <p><input type="submit" value="Envoyer" /></p>
 </form>
+</details>
+
