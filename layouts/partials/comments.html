@@ -3,17 +3,17 @@
 <div class="comments">
 {{ range .comments }}
 {{ if .id }}
-  <div class="comment">
-    <span><strong>{{ .id }}</strong></span></br>
-      <div class="comment-name">{{ .name }}{{if .website}} - <a href="{{ .website | safeURL }}">{{ .website }}{{ end }}</a></div>
-    <div class="comment-date">{{ .date }}</div>
+  <div class="comment" id="comment-{{ .id }}">
+    <span><strong>#{{ .id }}</strong></span></br>
+      <div class="comment-name">{{ if .name }}{{ .name }}{{else}}Commentaire Anonymus{{ end }}{{if .website}} - <a href="{{ .website | safeURL }}">{{ .website }}{{ end }}</a></div>
+    <div class="comment-date"><a href="#comment-{{ .id }}">{{ .date }}</a></div>
     <div class="comment-body">{{ .body | markdownify }}</div>
     {{if .reply}}
     {{range .reply}}
-    <div class="reply">
-    <span><strong>{{ .replyid }}</strong></span></br>
+    <div class="reply" id="comment-{{ .replyid }}">
+    <span><strong>#{{ .replyid }}</strong></span></br>
     <div class="reply-name">{{ .replyname }}{{if .replywebsite}} - <a href="{{ .replywebsite | safeURL }}">{{ .replywebsite }}{{ end }}</a></div>
-    <div class="reply-date">{{ .replydate }}</div>
+    <div class="reply-date"><a href="#comment-{{ .replyid }}">{{ .replydate }}</a></div>
     <div class="reply-body">{{ .replybody | markdownify }}</div>
     </div>
     {{ end }}
