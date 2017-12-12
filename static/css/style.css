@@ -71,6 +71,7 @@ header {
 header h1 a {
     float: left;
     margin-bottom: 0.4rem;
+    max-width: 80%;
 }
 time {
     float: right;
