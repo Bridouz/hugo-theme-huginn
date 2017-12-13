@@ -108,9 +108,10 @@ a:hover {
 blockquote {
     padding: 1px 15px;
     border-left: 2px solid #8d7edc;
-    border-top: 1px solid #c1c1c1;
-    border-right: 1px solid #c1c1c1;
-    border-bottom: 1px solid #c1c1c1;
+    border-top: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #424C59;
 }
 code {
     font-size: .75rem;
