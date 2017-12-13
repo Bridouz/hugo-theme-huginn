@@ -12,7 +12,7 @@
     {{range .reply}}
     <div class="reply" id="comment-{{ .replyid }}">
     <span><strong>#{{ .replyid }}</strong></span></br>
-    <div class="reply-name">{{ .replyname }}{{if .replywebsite}} - <a href="{{ .replywebsite | safeURL }}">{{ .replywebsite }}{{ end }}</a></div>
+    <div class="reply-name">{{ if .replyname }}{{ .replyname }}{{else}}Commentaire Anonymus{{ end }}{{if .replywebsite}} - <a href="{{ .replywebsite | safeURL }}">{{ .replywebsite }}{{ end }}</a></div>
     <div class="reply-date"><a href="#comment-{{ .replyid }}">{{ .replydate }}</a></div>
     <div class="reply-body">{{ .replybody | markdownify }}</div>
     </div>
