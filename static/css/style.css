@@ -1,94 +1,94 @@
 @font-face {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 300;
-    src: url("../fonts/nunito300.woff2") format("woff2")
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/nunito300.woff2") format("woff2")
 }
 @font-face {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 700;
-    src: url("../fonts/nunito700.woff2") format("woff2")
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/nunito700.woff2") format("woff2")
 }
 @font-face {
-    font-family: "Source Code Pro";
-    src: url("../fonts/sourcecodepro.woff2") format("woff2")
+  font-family: "Source Code Pro";
+  src: url("../fonts/sourcecodepro.woff2") format("woff2")
 }
 html {
-    background: #2F363F;
+  background: #2F363F;
 }
 body {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-top: 1rem;
-    font: 14px/1.7rem "Nunito Sans";
-    color: #dcdcdc;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  font: 14px/1.7rem "Nunito Sans";
+  color: #dcdcdc;
 }
 aside {
-    background: #22272E;
+  background: #22272E;
 }
 #avatar {
-    margin: 0 auto;
-    display: block;
-    width: 140px;
-    border-radius: 50%;
-    border-width: 4px;
-    border-style: inset;
+  margin: 0 auto;
+  display: block;
+  width: 140px;
+  border-radius: 50%;
+  border-width: 4px;
+  border-style: inset;
 }
 #sitetitle {
-    font-size: 1.8em;
-    letter-spacing: -0.5px;
-    padding-top: 1rem;
+  font-size: 1.8em;
+  letter-spacing: -0.5px;
+  padding-top: 1rem;
 }
 #sitesubtitle {
-    font-size: 0.85em;
-    line-height: 1.5em;
-    margin: 12px 0;
+  font-size: 0.85em;
+  line-height: 1.5em;
+  margin: 12px 0;
 }
 #social {
-    font-size: 1.2rem;
-    padding: 0.8rem;
+  font-size: 1.2rem;
+  padding: 0.8rem;
 }
 #social i {
   margin: 1rem;
 }
 main {
-    background: #363e49;
-    text-align: justify;
-    padding: 10px;
+  background: #363e49;
+  text-align: justify;
+  padding: 10px;
 }
 article {
-    padding: 1rem 1rem 3rem 1rem;
+  padding: 1rem 1rem 3rem 1rem;
 }
 header {
-    border-bottom: thin solid #bfbfbf;
-    border-top: thin solid #bfbfbf;
-    padding-bottom: .75rem;
-    margin-bottom: 1rem;
-    padding: 0 .75rem .75rem .75rem;
+  border-bottom: thin solid #bfbfbf;
+  border-top: thin solid #bfbfbf;
+  padding-bottom: .75rem;
+  margin-bottom: 1rem;
+  padding: 0 .75rem .75rem .75rem;
 }
 header h1 a {
-    float: left;
-    margin-bottom: 0.4rem;
-    max-width: 80%;
+  float: left;
+  margin-bottom: 0.4rem;
+  max-width: 80%;
 }
 time {
-    float: right;
-    font-size: 0.8rem;
+  float: right;
+  font-size: 0.8rem;
 }
 .meta {
-    clear: both;
-    font-size: .86rem;
-    margin-bottom: 0.8rem;
+  clear: both;
+  font-size: .86rem;
+  margin-bottom: 0.8rem;
 }
 .meta .categories {
-    text-transform: uppercase;
-    color: #F5A623;
+  text-transform: uppercase;
+  color: #F5A623;
 }
 .meta .tags {
-    color: #42b983;
-    margin-left: 0.6rem;
+  color: #42b983;
+  margin-left: 0.6rem;
 }
 .tags::before {
   content: "#";
@@ -99,53 +99,51 @@ footer {
   text-align: center;
   clear: both;
 }
-a {
-  color: #5b9dd9;
-}
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 blockquote {
-    padding: 1px 15px;
-    border-left: 2px solid #8d7edc;
-    border-top: 1px solid #dcdcdc;
-    border-right: 1px solid #dcdcdc;
-    border-bottom: 1px solid #dcdcdc;
-    background-color: #424C59;
+  padding: 1px 15px;
+  border-left: 2px solid #8d7edc;
+  border-top: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #424C59;
 }
 code {
-    font-size: .75rem;
-    font-family: "Source Code Pro", monospace;
-    padding: 0.125rem;
-    color: #e6e6e6;
-    background-color: #22272e;
-    border-radius: 2px;
+  font-size: .75rem;
+  font-family: "Source Code Pro", monospace;
+  padding: 0.125rem;
+  color: #e6e6e6;
+  background-color: #22272e;
+  border-radius: 2px;
 }
 pre {
-    padding: 1rem 2rem;
-    border: 1px #5b9dd9 solid;
-    border-radius: 2px;
-    background: #22272E;
-    display: block;
-    white-space: pre-wrap;
+  padding: 1rem 2rem;
+  border: 1px #5b9dd9 solid;
+  border-radius: 2px;
+  background: #22272E;
+  display: block;
+  white-space: pre-wrap;
 }
 a {
-    font-weight: bold;
-    text-decoration: none;
-    font-weight: bold;
-    outline: 0;
+  font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
+  outline: 0;
+  color: #5b9dd9;
 }
 h1 {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 h2 {
-    font-size: 1.4em;
+  font-size: 1.4em;
 }
 h3 {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 h1 i {
-	padding-right: 1rem;
+  padding-right: 1rem;
 }
 em, strong {
   color: #42b983;
@@ -185,104 +183,105 @@ img {
   max-width: 80%;
 }
 .label {
-    display: inline;
-    padding: .2em 1em .2em;
-    font-size: 80%;
-    color: #ffffff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
-    background-color: #5b9dd9;
+  display: inline;
+  padding: .2em 1em .2em;
+  font-size: 80%;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background-color: #5b9dd9;
 }
 .comments {
-    padding: .4rem;
+  padding: .4rem;
 }
 .comment {
-    background-color: #4c5767;
-    padding: .4rem;
-    border-radius: 4px;
-    margin-top: .4rem;
+  background-color: #4c5767;
+  padding: .4rem;
+  border-radius: 4px;
+  margin-top: .4rem;
 }
 .reply {
-    background-color: #414b58;
-    padding: 0.4rem;
-    border-radius: 4px;
-    margin-top: .4rem;
-    margin-left: 1rem;
+  background-color: #414b58;
+  padding: 0.4rem;
+  border-radius: 4px;
+  margin-top: .4rem;
+  margin-left: 1rem;
 }
 .comments span {
-    float: left;
+  float: left;
 }
 .comment-name, .reply-name {
-    float: left;
-    font-weight: bold;
+  float: left;
+  font-weight: bold;
 }
 .comment-date, .reply-date {
-    float: right;
+  float: right;
 }
 .comment-body, .reply-body {
-    clear: both;
-    margin-top: 2.6rem;
-    padding-top: .4rem;
-    border-top: 1px solid #dcdcdc;
+  clear: both;
+  margin-top: 2.6rem;
+  padding-top: .4rem;
+  border-top: 1px solid #dcdcdc;
 }
 @media only screen and (min-width: 900px) {
-    aside {
-        float: left;
-        width: 160px;
-        position: fixed;
-        border-radius: 2%;
-        border-width: 1px;
-        padding: 2rem 0.5rem;
-        text-align: center;
-    }
-    main {
-        float: right;
-        width: 640px;
-    }
-    #TableOfContents {
-        max-width: 50%;
-    }
-    .gallery-item {
-        width: 20%;
-    }
-    .thumbnail {
-        max-width: 30%;
-    }
+  aside {
+    float: left;
+    width: 160px;
+    position: fixed;
+    border-radius: 2%;
+    border-width: 1px;
+    padding: 2rem 0.5rem;
+    text-align: center;
+  }
+  main {
+    float: right;
+    width: 640px;
+  }
+  #TableOfContents {
+    max-width: 50%;
+  }
+  .gallery-item {
+    width: 20%;
+  }
+  .thumbnail {
+    max-width: 30%;
+  }
 }
 @media only screen and (max-width: 767px) {
-    body {
-        padding-top: 0px;
-    }
-    aside {
-        position: relative;
-        padding: 0.2rem 0 0.2rem 0.2rem;
-        vertical-align: middle;
-        text-align: left
-    }
-    #avatar {
-        display: none;
-    }
-    #sitetitle {
-        font-size: 1rem;
-        padding-top: 0.2rem;
-    }
-    #sitesubtitle {
-        margin: 0px;
-    }
-    #social {
+  body {
+    padding-top: 0px;
+  }
+  aside {
+    position: relative;
+    padding: 0.2rem 0 0.2rem 0.2rem;
+    vertical-align: middle;
+    text-align: left
+  }
+  #avatar {
+    display: none;
+  }
+  #sitetitle {
+    font-size: 1rem;
+    padding-top: 0.2rem;
+  }
+  #sitesubtitle {
+    margin: 0px;
+  }
+  #social {
     font-size: 1rem;
     padding: 0.2rem;
-    }
-    main {
-        clean: both;
-        padding-top: 1rem;;
-    }
-    .gallery-item {
-        width: 33.3%;
-    }
-    .thumbnail {
-        max-width: 80%;
-}
+  }
+  main {
+    clean: both;
+    padding-top: 1rem;
+    ;
+  }
+  .gallery-item {
+    width: 33.3%;
+  }
+  .thumbnail {
+    max-width: 80%;
+  }
 }
