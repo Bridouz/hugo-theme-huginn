@@ -147,6 +147,9 @@ h3 {
 h1 i {
 	padding-right: 1rem;
 }
+em, strong {
+  color: #42b983;
+}
 #index {
   text-align: center;
 }
