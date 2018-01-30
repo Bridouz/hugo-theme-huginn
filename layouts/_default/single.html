@@ -2,7 +2,7 @@
   {{ if isset .Params "lightbox" }}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{- end -}}
-  {{ if isset .Params "gallery" }}
+  {{- with .Resources.ByType "image" -}}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{- end }}
     <link rel="stylesheet" href="/css/pygments.min.css" />
@@ -46,6 +46,7 @@
         </div>
         {{- end -}}
         {{- .Content -}}
+        {{ partial "gallery" . }}
       </article>
       {{ $related := .Site.RegularPages.Related . | first 5 }}
       {{ with $related }}
@@ -69,7 +70,7 @@
             return element.getElementsByTagName('img')[0].alt;
 }});</script>
       {{- end -}}
-      {{- if isset .Params "gallery" -}}
+      {{- with .Resources.ByType "image" -}}
       <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
       <script>baguetteBox.run('.gallery', {
         captions: function(element) {
