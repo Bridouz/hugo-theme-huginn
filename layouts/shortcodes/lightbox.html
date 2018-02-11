@@ -1,4 +1,8 @@
-{{- $thumb := .Get "src" | default (printf "%s." ("-thumb") | replace (.Get "img") ".") }}
-<a href={{ .Get "img" }}>
-  <img class="thumbnail {{ .Get "align" }}" src="{{ $thumb }}">
+{{ $img := (.Page.Resources.ByType "image").GetMatch ( printf "images/lightbox/%s*" (.Get "img"))  }}
+{{ $align := (.Get "align") }}
+{{ .Scratch.Set "image" ($img.Resize "256x q80") }}
+{{ $scaled := .Scratch.Get "image" }}  
+<a href="{{ $img.RelPermalink }}">
+  <img class="thumbnail {{ with $align }}{{ . }}{{ end }}" src="{{ $scaled.Permalink }}">
 </a>
+

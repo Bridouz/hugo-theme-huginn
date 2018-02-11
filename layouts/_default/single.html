@@ -1,8 +1,8 @@
 {{- define "css" -}}
-  {{ if isset .Params "lightbox" }}
+  {{- with .Resources.Match "images/lightbox/*.*" -}}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{- end -}}
-  {{- with .Resources.ByType "image" -}}
+  {{- with .Resources.Match "images/gallery/*.*" -}}
     <link rel="stylesheet" href="/css/baguetteBox.min.css" />
   {{- end }}
     <link rel="stylesheet" href="/css/pygments.min.css" />
@@ -63,14 +63,14 @@
       {{ end }}
       {{ end }}
       {{- define "scripts" -}}
-      {{- if isset .Params "lightbox" -}}
+      {{- with .Resources.Match "images/lightbox/*.*" -}}
       <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
       <script>baguetteBox.run('a', {
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
 }});</script>
       {{- end -}}
-      {{- with .Resources.ByType "image" -}}
+      {{- with .Resources.Match "images/gallery/*.*" -}}
       <script src="{{ "js/baguetteBox.min.js" | relURL}}"></script>
       <script>baguetteBox.run('.gallery', {
         captions: function(element) {
