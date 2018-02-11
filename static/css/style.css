@@ -108,7 +108,7 @@ pre {
   border-radius: 2px;
   background: #22272E;
   display: block;
-  white-space: pre-wrap;
+  overflow-x: auto;
 }
 a {
   font-weight: bold;
