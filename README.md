@@ -11,24 +11,28 @@ As of today **Huginn** supports :
     - Table of Content (automatically added if your post contains *headers*)
     - Related Content
     - Rss feeds (tweaked layout to allow full-text rendering)
-  - Code Highlighting powered by Pygments (might need to install python's pygments package on your computer)
   - Javascript lightbox powered by [baguetteBox.js](https://github.com/feimosi/baguetteBox.js)
-    - A `lightbox` shortcode for simple one-image display (activated in frontmatter with `lightbox = True`)
-    - A `gallery` shortcode to display all images in a directory(activated in frontmatter with `gallery = True`)
+  - A `lightbox` shortcode for simple one-image display
+  - A `gallery` partial to display a nice gallery at the end of your post
   - Displaying a link and the name of a song you were listening at while writing a post (activated in frontmatter with `song: [title](link)`)
+  - A `comments` partial for real static comments, powered by `yaml` files.
     
 
-## Shortcodes
 
-*I really want to thanks [liwenyip](https://www.liwen.id.au) for having created [hugo-easy-gallery](https://github.com/liwenyip/hugo-easy-gallery) which inspired me to create my shortcodes.*
+## Lightbox
 
-### lightbox
+> This shortcode uses the **Page Bundle** function introduced in Hugo 0.32, make sure to be aware of it when playing with `lightbox`.
+
 The `lightbox` shortcode is pretty simple and looks like this :
 ```
-{{- $thumb := .Get "src" | default (printf "%s." ("-thumb") | replace (.Get "img") ".") }}
-<a href={{ .Get "img" }}>
-  <img class="thumbnail {{ .Get "align" }}" src="{{ $thumb }}">
+{{ $img := (.Page.Resources.ByType "image").GetMatch ( printf "images/lightbox/%s*" (.Get "img"))  }}
+{{ $align := (.Get "align") }}
+{{ .Scratch.Set "image" ($img.Resize "256x q80") }}
+{{ $scaled := .Scratch.Get "image" }}  
+<a href="{{ $img.RelPermalink }}">
+  <img class="thumbnail {{ with $align }}{{ . }}{{ end }}" src="{{ $scaled.Permalink }}">
 </a>
+
 ```
 
 All you have to do is to make sure that your thumbnail has the same filename that the full one only with the addition of the suffix *-thumb* before the extension.
@@ -36,41 +40,55 @@ The shortcode only needs two parameters :
 
 |  Parameters  |  Description
 |:------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  `img=""`    |  Path to your image. (ex: /img/folder/image.png)											                                                                      |
+|  `img=""`    |  Filename to your image. (no `.extension` required)											                                                                      |
 |  `align=""`  |  If you want to align the image on the left side or the right side of the *content* block.If none is specified the image is automatically centered in the block. |
 
-*Don't forget to add a `lightbox = True` in your post frontmatter to load Featherlight ressources.*
+## Gallery
+> **Page-Bundle** required
 
-### gallery
-The `gallery` shortcode is even more simplier than the previous one. All you have to do is enter the path of the folder containing your images you want to render. (You don't even need to enter the `/img/` path, it's already included in the shortcode.
+The `gallery` partial is even more simple. All you have to do is put your images in `images/gallery` and ... here you are, with images at the end of your post.
 
 ```
 <div class="gallery">
-	{{- with (.Get "dir") -}}
-		{{- $files := readDir (print "/static/img/" .) }}
-		{{- range $files -}}
-			{{- $thumbext := "-thumb" }}
-			{{- $isthumb := .Name | findRE ($thumbext | printf "%s\\.") }}
-			{{- $isimg := lower .Name | findRE "\\.(gif|jpg|jpeg|tiff|png|bmp)" }}
-			{{- if and $isimg (not $isthumb) }}
-				{{- $caption :=  .Name | replaceRE "\\..*" "" | humanize }}
-				{{- $linkURL := print "/img/" ($.Get "dir") "/" .Name | absURL }}
-				{{- $thumb := .Name | replaceRE "(\\.)" ($thumbext | printf "%s.") }}
-				{{- $thumbexists := where $files "Name" $thumb }}
-				{{- $thumbURL := print "/img/" ($.Get "dir") "/" $thumb | absURL }}
-  <div class="gallery-item">
-    <a href="{{ $linkURL }}" >
-      <img class="thumbnail" src="{{ $thumbURL }}">
-    </a>
-  </div>
-{{- end }}
-{{- end }}
-{{- end }}
+{{ with .Resources.Match "images/gallery/*.*" }}
+{{ range . }}
+{{ $scaled := .Resize "256x q80" }}
+<div class="gallery-item">
+<a href="{{ .RelPermalink }}">
+<img class="thumbnail" src="{{ $scaled.Permalink }}">
+</a>
 </div>
+{{ end }}
+{{ end }}
+</div>
+
 ```
 
-|  Parameters  |  Description
-|:------------:|----------------------------------------------------------------------------|
-|  `dir=""`    |  Path to the folder containing your images. (ex: /folder/imagecontainer/)  |
+## Comments
 
-*Don't forget to add a `gallery = True` in your post frontmatter to load Featherlight ressources.*
+Static comment system based on `.yaml` files with the same filename that posts and stored in `data/comments`
+
+example:
+```
+```
+comments:
+  - id: "1"
+    name: "John Doe"
+    date: "03-01-2018
+    website: "https://gohugo.io"
+    body: |
+      Wow a *markdown* comment !
+
+  - id: "2"
+    name: "John Double"
+    date: "03-01-2018"
+    body: |
+      And there you are.
+
+    reply:
+    - replyid: "2.1"
+      replyname: "Reply Man"
+      replydate: "03-01-2018"
+      replybody: |
+        An answer arrives !
+```
