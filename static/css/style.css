@@ -44,21 +44,20 @@ main {
 }
 article {
   padding: 1rem 1rem 3rem 1rem;
+  background-color: #2b323b;
+  margin-bottom: 0.4rem;
 }
 header {
-  border-bottom: thin solid #bfbfbf;
-  border-top: thin solid #bfbfbf;
-  padding-bottom: .75rem;
+  border: 0.2rem solid #363E49;
   margin-bottom: 1rem;
   padding: 0 .75rem .75rem .75rem;
+  background-color: #22272E;
 }
-header h1 a {
-  float: left;
+header h1 a{
   margin-bottom: 0.4rem;
   max-width: 80%;
 }
 time {
-  float: right;
   font-size: 0.8rem;
 }
 .meta {
@@ -138,6 +137,13 @@ strong {
 #index {
   text-align: center;
 }
+figure {
+  max-width: 30%;
+  margin: auto;
+}
+figcaption {
+  text-align: center;
+}
 img {
   display: block;
   margin: auto;
@@ -151,7 +157,6 @@ img {
 }
 .thumbnail {
   padding: 1rem;
-  max-width: 30%;
 }
 .left {
   float: left;
@@ -238,6 +243,12 @@ img {
     float: right;
     width: 640px;
   }
+  header h1 a{
+    float: left;
+  }
+  time {
+    float: right;
+  }
   #TableOfContents {
     max-width: 50%;
   }
@@ -272,9 +283,14 @@ img {
   #social {
   }
   main {
-    clean: both;
+    clear: both;
     padding-top: 1rem;
-    ;
+  }
+  header {
+    text-align: center;
+  }
+  time {
+    display: block;
   }
   .gallery-item {
     width: 33.3%;

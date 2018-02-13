@@ -1,8 +1,15 @@
 {{ $img := (.Page.Resources.ByType "image").GetMatch ( printf "images/lightbox/%s*" (.Get "img"))  }}
 {{ $align := (.Get "align") }}
+{{ $caption := (.Get "caption") }}
 {{ .Scratch.Set "image" ($img.Resize "256x q80") }}
 {{ $scaled := .Scratch.Get "image" }}  
+<figure{{ with $align }} class="{{ . }}"{{ end }}>
 <a href="{{ $img.RelPermalink }}">
-  <img class="thumbnail {{ with $align }}{{ . }}{{ end }}" src="{{ $scaled.Permalink }}">
+  <img class="thumbnail" src="{{ $scaled.Permalink }}">
 </a>
-
+{{ with $caption }}
+<figcaption>
+  <small>{{ . }}</small>
+</figcaption>
+{{ end }}
+</figure>
