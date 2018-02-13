@@ -137,6 +137,28 @@ strong {
 #index {
   text-align: center;
 }
+table,td,th {
+  border: 1px solid #bdbdbd;
+}
+table {
+  width: 95%;
+  margin: 0 0 1.5em;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-width: 1px 0 0 1px;
+}
+thead {
+  background-color: #22272E;
+}
+th {
+  font-weight: 700;
+}
+td,th {
+  border-width: 0 1px 1px 0;
+}
+td,th {
+  padding: 0.375rem;
+}
 figure {
   max-width: 30%;
   margin: auto;
