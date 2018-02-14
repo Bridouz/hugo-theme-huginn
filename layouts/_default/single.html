@@ -34,16 +34,16 @@
           {{- end -}}
           </div>
         </header>
+        {{- with .Params.song -}}
+        <div class="nowlistening">
+          {{- . | markdownify -}}
+        </div>
+        {{- end -}}
         {{ if .TableOfContents }}
         <details>
           <summary>Table des Matières</summary>
           {{- .TableOfContents -}}
         </details>
-        {{- end -}}
-        {{- with .Params.song -}}
-        <div class="nowlistening">
-          {{- . | markdownify -}}
-        </div>
         {{- end -}}
         {{- .Content -}}
         {{ partial "gallery" . }}
