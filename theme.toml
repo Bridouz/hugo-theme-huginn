@@ -15,7 +15,7 @@ features = [
   "Mobile-optimized",
   "Pagination",
   "Lightbox",
-  "Gallery',
+  "Gallery",
   "Code highlight",
   "Hashover comments",
   "Related Posts",
